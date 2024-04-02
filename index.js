@@ -1,22 +1,31 @@
-function receivesAFunction(callback) {
-    callback();
+function receivesAFunction(exercise) {
+    // Call the callback function
+    exercise();
 }
-function myCallback() {
-    console.log("This is the callback function!");
-}
-receivesAFunction(myCallback);
+
 function returnsANamedFunction() {
+    // Define a named function
     function namedFunction() {
-        console.log("This is a named function!");
+        console.log("This is a named function");
     }
+    // Return the named function
     return namedFunction;
 }
-const myNamedFunction = returnsANamedFunction();
-myNamedFunction();
+
 function returnsAnAnonymousFunction() {
+    // Return an anonymous function
     return function() {
-        console.log("This is an anonymous function!");
+        console.log("This is an anonymous function");
     };
 }
-const myAnonymousfunction = returnsAnAnonymousFunction();
-myAnonymousFunction();
+
+// Test the functions
+receivesAFunction(function() {
+    console.log("Callback function called");
+});
+
+const namedFunc = returnsANamedFunction();
+namedFunc();
+
+const anonymousFunc = returnsAnAnonymousFunction();
+anonymousFunc();
